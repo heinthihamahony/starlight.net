@@ -1,113 +1,283 @@
 import Image from "next/image";
+import Buttoncontinue from "./component/ui/buttoncontinue";
+import Servicecard from "./component/ui/service-card";
+
+const services = [
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/pPa8l21xrcnpXyKi1mWwkrVTHfbZHQUXHzT5TV15.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အချစ်ရေး နှင့် အိမ်ထောင်ရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "အချစ်ရေးနှင့် ပက်သက်သော အကြောင်းအရာကိစ္စများ၊ အိမ်ထောင်ရေးနှင့ ပက်သက်သော အကြောင်းအရာကိစ္စများကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/pPa8l21xrcnpXyKi1mWwkrVTHfbZHQUXHzT5TV15.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အချစ်ရေး နှင့် အိမ်ထောင်ရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "အချစ်ရေးနှင့် ပက်သက်သော အကြောင်းအရာကိစ္စများ၊ အိမ်ထောင်ရေးနှင့် ပက်သက်သော အကြောင်းအရာကိစ္စများကို  ပညာရှင် ၃ ဦးမှ   အသေးစိတ် စုပေါင်း သုံ...",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/FVVINtYuxJ5ZMFbBRTEksw5UVivXPjzI6OHgyJfK.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ပညာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ ",
+    description:
+      "စာမေးပွဲဖြေဆိုခြင်း၊ နိုင်ငံခြား ကျောင်းလျောက်ခြင်း၊ ကျောင်းဗီဇာလျောက်ခြင်း၊ ပညာသင်ဆုလျောက်ခြင်း၊ ဘွဲ့ထူး ဂုဏ်ထူးရရှိခြင်း အစရှိသည့် ပညာရေးနှင့် သက်ဆိုင်သောကိစ္စများကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/FVVINtYuxJ5ZMFbBRTEksw5UVivXPjzI6OHgyJfK.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ပညာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်းသုံးသပ်ပေးပါမည်။)",
+    description:
+      "စာမေးပွဲဖြေဆိုခြင်း၊ နိုင်ငံခြား ကျောင်းလျောက်ခြင်း၊ ကျောင်းဗီဇာလျောက်ခြင်း၊ ပညာသင်ဆုလျောက်ခြင်း၊ ဘွဲ့ထူး ဂုဏ်ထူးရရှိခြင်း အစရှိသည့် ပညာရေးနှင့် သက်ဆိုင်သောကိစ္စများကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြ...",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/IFYTqIaoWveM9NIHGRvQL1T3A6228haC4cMxlFtt.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် နိုင်ငံခြား နှင့် ခရီးသွားလာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "ပြည်တွင်း ပြည်ပ ခရီးသွားလာခြင်း၊ နိုင်ငံခြားတွင် ပြောင်းရွှေ့ အခြေချနေထိုင်ခြင်း၊ Immigration ကိစ္စရပ်များ၊ ဗီဇာလျောက်ထားခြင်း အစရှိသည့် ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပ...",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/IFYTqIaoWveM9NIHGRvQL1T3A6228haC4cMxlFtt.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် နိုင်ငံခြား နှင့် ခရီးသွားလာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "ပြည်တွင်း ပြည်ပ ခရီးသွားလာခြင်း၊ နိုင်ငံခြားတွင် ပြောင်းရွှေ့ အခြေချနေထိုင်ခြင်း၊ Immigration ကိစ္စရပ်များ၊ ဗီဇာလျောက်ထားခြင်း အစရှိသည့် ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပ...",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/nUL80qusnl0Kie5btiMULnz0tFU2y5m7ixLdXfh6.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အလုပ်အကိုင် ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "အလုပ်အကိုင်လျောက်ထားခြင်း၊ အင်တာဗျူးဖြေဆိုခြင်း၊ ရာထူး လစာ တိုးခြင်း၊ အလုပ်နေရာပြောင်းရွှေ့ခြင်း အစရှိသည့် အလုပ်အကိုင်နှင့် သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/nUL80qusnl0Kie5btiMULnz0tFU2y5m7ixLdXfh6.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အလုပ်အကိုင် ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦးအထိ စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "အလုပ်အကိုင်လျောက်ထားခြင်း၊ အင်တာဗျူးဖြေဆိုခြင်း၊ ရာထူး လစာ တိုးခြင်း၊ အလုပ်နေရာပြောင်းရွှေ့ခြင်း အစရှိသည့် အလုပ်အကိုင်နှင့် သက်ဆိုင်သော  ကိစ္စ ရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေး...",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/ylBXe7Ffru0qCd35zXkl24yYLp5xU9gFvRaKj2td.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ချမ်းသာခြင်း နှင့် ဝင်ငွေရလမ်း ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "အောင်မြင် ကြီးပွားတိုးတက်ခြင်း၊ ချမ်းသာခြင်း၊ ၀င်ငွေရပေါက်ရလမ်းကိစ္စများ၊ အမွေကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/ylBXe7Ffru0qCd35zXkl24yYLp5xU9gFvRaKj2td.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ချမ်းသာခြင်း နှင့် ဝင်ငွေရလမ်း ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "အောင်မြင် ကြီးပွားတိုးတက်ခြင်း၊ ချမ်းသာခြင်း၊ ၀င်ငွေရပေါက်ရလမ်းကိစ္စများ၊ အမွေကိစ္စ  ရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ်စုပေါင်း တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/59Ll5kULj2BIRl1hDD9IWUr4QTl6SzcsLR8UqEtD.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် သားသမီး နှင့် မိသားစု အရေးကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "သား၊ သမီးများနှင့် ပက်သက်သော အရေးကိစ္စများ၊ မိသားစုနှင့် ပက်သက်သော အရေးကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/DrHq2NomUVzmzMT6SYc69DaHEVM2n9hBOIulYEGa.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် သားသမီး နှင့် မိသားစု အရေးကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "သား၊ သမီးများနှင့် ပက်သက်သော အရေးကိစ္စများ၊ မိသားစုနှင့် ပက်သက်သော အရေးကိစ္စရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ်စုပေါင်း တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/6hPqUMApLAhO5hUhENdNrC26jXSAwxf62K0EZIYW.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ကျန်းမာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "ရောဂါဝေဒနာ ခံစားရခြင်း၊  ခွဲစိတ်ကုသခြင်း၊ ဆေးရုံတက်ခြင်း အစရှိသည့် ကျန်းမာရေးနှင့် သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/thGaq1vG3dkQLKICbKsy4ldCn7q51TYs5iWYbGuM.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ကျန်းမာရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "ရောဂါဝေဒနာ ခံစားရခြင်း၊  ခွဲစိတ်ကုသခြင်း၊ ဆေးရုံတက်ခြင်း အစရှိသည့် ကျန်းမာရေးနှင့် သက်ဆိုင်သော ကိစ္စရပ်များကို ပညာရှင် ၃  ဦးမှ  အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/vTDHEW2nhZWj6Jbgc2ahSjzbCKWarhO3jiNS3h3U.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် လူမှုရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "သာရေး၊ နာရေး၊ လူမှုရေးအခက်အခဲ ကိစ္စရပ်များနှင့်ပက်သက်၍ သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/vTDHEW2nhZWj6Jbgc2ahSjzbCKWarhO3jiNS3h3U.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် လူမှုရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "သာရေး၊ နာရေး၊ လူမှုရေးအခက်အခဲ ကိစ္စရပ်များနှင့်ပက်သက်၍ သက်ဆိုင်သော ကိစ္စရပ်များကို ပညာရှင် ၃  ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/p3rJ1osS2P3WbvLeiVNROFXXubaIe1XjU985vi4N.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ပိုင်ဆိုင်မှု ကိစ္စများအတွက် အသေးစိတ်တွက်ချက်ပေးခြင်း။",
+    description:
+      "အိုးအိမ်တိုက်တာ၊ အဆောက်အဦး၊ စက်ပစ္စည်း၊ ယာဉ်၊ ကား၊ ရွှေငွေ ဥစ္စာပစ္စည်းများ အစရှိသည့် ပိုင်ဆိုင်မှုနှင့်သက်ဆိုင်သော  ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/p3rJ1osS2P3WbvLeiVNROFXXubaIe1XjU985vi4N.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် လူမှုရေး ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "အိုးအိမ်တိုက်တာ၊ အဆောက်အဦး၊ စက်ပစ္စည်း၊ ယာဉ်၊ ကား၊ ရွှေငွေ ဥစ္စာပစ္စည်းများ အစရှိသည့် ပိုင်ဆိုင်မှုနှင့်သက်ဆိုင်သော  ကိစ္စရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/uZ59rDfWQmGp5944L3BUNu9cj1Tz01xutCFFnJc2.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ပစ္စည်းပျောက်၊ လူပျောက် ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "ပစ္စည်းပျောက်၊ လူပျောက်၊ သူခိုး ခိုးခံရခြင်း၊ ဆုံးရှုံးမှုများနှင့် ပက်သက်၍ သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/uZ59rDfWQmGp5944L3BUNu9cj1Tz01xutCFFnJc2.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် ပစ္စည်းပျောက်၊ လူပျောက် ကိစ္စများကို အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်း သုံးသပ်ပေးပါမည်။)",
+    description:
+      "ပစ္စည်းပျောက်၊ လူပျောက်၊ သူခိုး ခိုးခံရခြင်း၊ ဆုံးရှုံးမှုများနှင့် ပက်သက်၍ သက်ဆိုင်သော ကိစ္စရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/H0bVkGGM5aWvgWX0DGUqKwfrZ4bBkxpTob039wvC.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် တရားရေးကိစ္စများ၊ အမှုအခင်း ကိစ္စများကို အသေးစိတ်တွက်ချက်ပေးခြင်း။",
+    description:
+      "တရားမမှုများ၊ အမှုအခင်းကိစ္စများ၊ ဖမ်းဆီးချုပ်နှောင်ခံရခြင်း၊ ထောင်ကျခြင်း အစရှိသော တရားရေးနှင့် သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ်များ တွက်ချက်ဟောပြောပေးပါမည်။ ",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/H0bVkGGM5aWvgWX0DGUqKwfrZ4bBkxpTob039wvC.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် တရားရေးကိစ္စများ၊ အမှုအခင်း ကိစ္စများကို အသေးစိတ်တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်းသုံးသပ်ပေးပါမည်။)",
+    description:
+      "တရားမမှုများ၊ အမှုအခင်းကိစ္စများ၊ ဖမ်းဆီးချုပ်နှောင်ခံရခြင်း၊ ထောင်ကျခြင်း အစရှိသော တရားရေးနှင့် သက်ဆိုင်သော ကိစ္စရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေးပါမည...",
+    price: "100,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/HAuXuV9CKArhyQ4AgEW1CV2WaYeYTP8cIjNanm4X.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အခြားကိစ္စတစ်ခုအတွက် အသေးစိတ် တွက်ချက်ပေးခြင်း။",
+    description:
+      "အထက်ပါ ဝန်ဆောင်မှုများတွင်မပါရှိပဲ ကျန်ရှိနေသော အခြားကိစ္စရပ်များနှင့် ပက်သက်၍ သက်ဆိုင်သော ကိစ္စရပ်များကို အသေးစိတ် တွက်ချက်ဟောပြောပေးပါမည်။",
+    price: "50,000",
+    href: "",
+  },
+  {
+    id: "hiuyhui",
+    image:
+      "https://starlightastro.net/storage/service/HAuXuV9CKArhyQ4AgEW1CV2WaYeYTP8cIjNanm4X.png",
+    title:
+      "မူလဇာတာ နက္ခတ်ဗေဒင်ဖြင့် အခြားကိစ္စတစ်ခုအတွက် အသေးစိတ် တွက်ချက်ပေးခြင်း။ (ပညာရှင် ၃ ဦး စုပေါင်းသုံးသပ်ပေးပါမည်။)",
+    description:
+      "အထက်ပါ ဝန်ဆောင်မှုများတွင်မပါရှိပဲ ကျန်ရှိနေသော အခြားကိစ္စရပ်များနှင့် ပက်သက်၍ သက်ဆိုင်သော  ကိစ္စရပ်များကို ပညာရှင် ၃ ဦးမှ အသေးစိတ် စုပေါင်းတွက်ချက် ဟောပြောပေးပါမည်။",
+    price: "100,000",
+    href: "",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className=" mx-5">
+      <p className=" text-4xl font-bold my-5">Our Serves</p>
+      <div className="grid grid-cols-3 gap-5">
+        {services.map((service) => (
+          <Servicecard service={service} />
+        ))}
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
